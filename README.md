@@ -1,5 +1,9 @@
 # T47 — AI SEO Product Description Generator
 
+## 🚀 Live Demo
+
+[**Open AI SEO Product Description Generator →**](https://ai-description-spark.lovable.app)
+
 ## Included
 - `T47_SEO_Product_Description_Generator_COMPLETE.xlsx` — project workbook
 - `app.py` — Streamlit interactive UI
