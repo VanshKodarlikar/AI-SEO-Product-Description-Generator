@@ -1,0 +1,92 @@
+Build a polished, interactive Streamlit web app called “AI SEO Product Description Generator” for the T47 mini project.
+
+PROJECT OBJECTIVE
+The app takes a product record containing product_id, product_name, category, price_inr, key_attributes, and target_customer and generates:
+1) an approximately 60-word SEO-friendly product description,
+2) exactly 5 concise feature bullets,
+3) an SEO meta title of maximum 60 characters.
+
+DATA SOURCE
+Use the attached Excel workbook and its Selected_Products sheet as the primary input source. Never invent columns or product facts.
+
+CORE UI
+Create a clean, professional, student-project-friendly interface with:
+- page title and short explanation,
+- sidebar for generation mode and settings,
+- product selector for the 50-product sample,
+- read-only product details pulled from Excel,
+- Generate button,
+- generated description section,
+- five feature bullets,
+- meta title,
+- validation metrics,
+- export button,
+- clear warning that automated checks do not replace human fact-checking.
+
+GENERATION MODES
+1. Demo mode that works without an API key for presentation/testing.
+2. Optional Gemini API mode using a runtime API key from the user. Never hard-code credentials.
+
+MASTER LLM PROMPT
+Use this exact logic:
+“You are an SEO product copywriter for an e-commerce catalog. Use ONLY the product information supplied below. Never invent or infer any factual detail.
+
+PRODUCT INPUT
+Product ID: {product_id}
+Product Name: {product_name}
+Category: {category}
+Price (INR): {price_inr}
+Key Attributes: {key_attributes}
+Target Customer: {target_customer}
+
+TASK
+1. Write an SEO-friendly product description of approximately 60 words.
+2. Generate exactly 5 concise bullet points.
+3. Create one SEO-friendly meta title of no more than 60 characters.
+4. Use the product name naturally and relevant supplied attributes without keyword stuffing.
+5. Write for the stated target customer.
+6. Preserve supplied numbers, units and specifications exactly.
+7. If a fact is not explicitly provided, omit it rather than guessing.
+8. Do not make unsupported medical, safety, quality, superiority or performance claims.
+
+OUTPUT FORMAT
+DESCRIPTION:
+...
+
+KEY FEATURES:
+- ...
+- ...
+- ...
+- ...
+- ...
+
+META TITLE:
+...”
+
+VALIDATION
+After generation, calculate:
+- description word count,
+- meta title character count,
+- bullet count,
+- presence of supplied attribute values,
+- warning for numeric values appearing in the output but not in the source attributes.
+Do not present automated validation as proof of correctness; require human review.
+
+UX REQUIREMENTS
+- Responsive layout.
+- Clear section headings.
+- Friendly but professional language.
+- Use cards/metrics where appropriate.
+- Keep the workflow understandable to a non-technical faculty evaluator.
+- No unnecessary login system.
+- No database required.
+- Keep code simple enough for a student to explain in a viva.
+
+DELIVERABLES
+Generate:
+- app.py
+- requirements.txt
+- README.md
+- optional deployment instructions for Streamlit Community Cloud
+
+Do not claim an AI interaction happened unless it actually happened. Keep project documentation honest about demo mode versus real LLM mode.
